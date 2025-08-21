@@ -2,6 +2,9 @@
 image=~/Desktop/Desktop/Backgrounds/background_lock_omon.png
 indicator-idle-visible
 
+indicator-x-position=954
+indicator-y-position=551
+
 inside-color=263651
 ring-color=324668
 inside-clear-color=238693

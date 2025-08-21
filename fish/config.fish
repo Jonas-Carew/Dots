@@ -25,7 +25,7 @@ function cl
 end
 
 function condir
-    z ~/.config
+    z ~/Dots
 end
 
 function fetch
