@@ -1,0 +1,73 @@
+
+hook global RegisterModified '"' %{nop %sh{
+    printf %s "$kak_main_reg_dquote" | xclip -in -selection clipboard >&- 2>&-
+}}
+
+eval %sh{kak-lsp}
+lsp-enable
+
+enable-auto-pairs
+harpoon-add-bindings
+
+add-highlighter global/ show-whitespaces -only-trailing -lf ' '
+add-highlighter global/ number-lines -hlcursor -relative
+add-highlighter global/ show-matching
+add-highlighter global/ wrap -word -indent -marker '⏎'
+
+set-option global tabstop 4
+set-option global indentwidth 4
+set-option global scrolloff 2,2
+
+# insert maps
+map global insert <a-:> <esc> -docstring "Escape to normal mode"
+# user maps
+map global user <l> ":lsp-hover<ret>" -docstring "LSP Hover"
+map global user <r> ":lsp-highlight-references<ret>" -docstring "LSP Highlight Refs"
+map global user <d> ":lsp-diagnostics<ret>" -docstring "LSP Open Diagnostics"
+map global user <n> ":lsp-rename-prompt<ret>" -docstring "LSP Refactor with Prompt"
+map global user <b> ":buffer-switcher<ret>" -docstring "Open Buffer Switcher"
+# normal maps
+map global normal <c-v> ":comment-line<ret>" -docstring "Auto Comment Line"
+
+hook -group lsp-filetype-zig global BufSetOption filetype=zig %{
+    set-option buffer lsp_servers %{
+        [zls]
+        root_globs = ["build.zig"]
+    }
+}
+hook -group lsp-filetype-nix global BufSetOption filetype=nix %{
+    set-option buffer lsp_servers %{
+        [nil]
+        root_globs = ["flake.nix", "shell.nix", ".git", ".hg"]
+    }
+}
+hook -group lsp-filetype-c-family global BufSetOption filetype=(?:c|cpp|objc) %{
+    set-option buffer lsp_servers %{
+        [clangd]
+        args = ["--log=error"]
+        root_globs = ["compile_commands.json", ".clangd", ".git", ".hg"]
+    }
+}
+hook -group lsp-filetype-markdown global BufSetOption filetype=markdown %{
+    set-option buffer lsp_servers %{
+        [marksman]
+        root_globs = [".marksman.toml"]
+        args = ["server"]
+    }
+}
+hook -group lsp-filetype-lua global BufSetOption filetype=lua %{
+    set-option buffer lsp_servers %{
+        [lua-language-server]
+        root_globs = [".git", ".hg"]
+        single_instance = false
+        settings_section = "Lua"
+        [lua-language-server.settings.Lua]
+    }
+}
+hook -group lsp-filetype-python global BufSetOption filetype=python %{
+    set-option buffer lsp_servers %{
+        [pylsp]
+        root_globs = ["requirements.txt", "setup.py", "pyproject.toml", ".git", ".hg"]
+	}
+}
+
