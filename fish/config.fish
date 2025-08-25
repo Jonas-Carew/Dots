@@ -7,6 +7,10 @@ function c
     clear
 end
 
+function bls
+	bash -c 'ls'
+end
+
 function ls
     eza --icons
 end
