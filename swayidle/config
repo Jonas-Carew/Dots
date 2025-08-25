@@ -1,3 +1,4 @@
 
+brightnessctl set 5%
 timeout 300 'swaylock'
 
