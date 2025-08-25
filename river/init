@@ -110,21 +110,18 @@ riverctl map normal Super Left  send-layout-cmd rivertile "main-location left"
 
 # Declare a passthrough mode. This mode has only a single mapping to return to
 # normal mode. This makes it useful for testing a nested wayland compositor
-riverctl declare-mode passthrough
+#riverctl declare-mode passthrough
 
 # Super+F11 to enter passthrough mode
-riverctl map normal Super F11 enter-mode passthrough
+#riverctl map normal Super F11 enter-mode passthrough
 
 # Super+F11 to return to normal mode
-riverctl map passthrough Super F11 enter-mode normal
+#riverctl map passthrough Super F11 enter-mode normal
 
 # Various media key mapping examples for both normal and locked mode which do
 # not have a modifier
 for mode in normal locked
 do
-    # Eject the optical drive (well if you still have one that is)
-    riverctl map $mode None XF86Eject spawn 'eject -T'
-
     # Control pulse audio volume with pamixer (https://github.com/cdemoulins/pamixer)
     riverctl map $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 5'
     riverctl map $mode None XF86AudioLowerVolume  spawn 'pamixer -d 5'
@@ -139,6 +136,16 @@ do
     # Control screen backlight brightness with brightnessctl (https://github.com/Hummer12007/brightnessctl)
     riverctl map $mode None XF86MonBrightnessUp   spawn 'brightnessctl set +5%'
     riverctl map $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%-'
+
+	# birghtness
+	riverctl map $mode Super+Shift equal spawn "fish -c 'bright'"
+	riverctl map $mode Super equal spawn "fish -c 'dim'"
+	riverctl map $mode Super minus spawn "fish -c 'dark'"
+
+	# screenshot
+	riverctl map $mode Super+Shift S spawn "grim -g `slurp`"
+	riverctl map $mode Super+Shift+Control S spawn "grim -g `slurp` - | wl-copy"
+
 done
 
 # Set background and border color
@@ -166,6 +173,8 @@ riverctl rule-add csd
 riverctl input pointer-1267-12448-ELAN072B:00_04F3:30A0_Touchpad natural-scroll enabled
 riverctl input pointer-1267-12448-ELAN072B:00_04F3:30A0_Touchpad tap enabled
 
+riverctl map-switch normal lid close spawn "swaylock"
+
 # APPS TO RUN ON STARTUP
 riverctl spawn waybar
 
@@ -173,3 +182,4 @@ riverctl spawn swww-daemon
 swww img ~/Desktop/Desktop/Backgrounds/background_omon.jpg
 
 riverctl spawn swayidle
+

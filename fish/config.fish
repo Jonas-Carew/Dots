@@ -88,6 +88,11 @@ function dark
 	brightnessctl set 5%
 end
 
+function lock
+	dark
+	swaylock
+end
+
 # vi bindings
 
 fish_vi_key_bindings
