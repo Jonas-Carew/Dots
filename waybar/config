@@ -6,7 +6,7 @@
     
     "modules-left": ["river/tags"],
     "modules-center": ["river/window"],
-    "modules-right": ["pulseaudio", "bluetooth", "network", "cpu", "memory", "battery", "clock", "tray"],
+    "modules-right": ["backlight", "pulseaudio", "bluetooth", "network", "cpu", "memory", "battery", "clock", "tray"],
     
     "river/tags": {
         "num-tags": 9,
@@ -26,6 +26,10 @@
     "cpu": {
         "format": "CPU: {usage}% ",
         "interval": 5
+    },
+    
+    "backlight": {
+        "format": "{percent}% "
     },
     
     "memory": {
