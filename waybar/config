@@ -1,0 +1,82 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 8,
+    
+    "modules-left": ["river/tags"],
+    "modules-center": ["river/window"],
+    "modules-right": ["pulseaudio", "bluetooth", "network", "cpu", "memory", "battery", "clock", "tray"],
+    
+    "river/tags": {
+        "num-tags": 9,
+		"hide-vacant": true,
+    },
+    
+    "river/window": {
+        "format": "{}"
+    },
+    
+    "clock": {
+        "format": "{:%H:%M %d/%m/%Y}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"timezone": "America/Chicago",
+    },
+    
+    "cpu": {
+        "format": "CPU: {usage}% ",
+        "interval": 5
+    },
+    
+    "memory": {
+        "format": "MEM: {}% "
+    },
+    
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "BAT: {capacity}% {icon}",
+        "format-charging": "BAT: {capacity}% ",
+        "format-plugged": "BAT: {capacity}% ",
+        "format-icons": ["", "", "", "", ""]
+    },
+    
+    "network": {
+        "format-wifi": "WIFI: {essid} ({signalStrength}%) ",
+        "format-ethernet": "ETH: {ipaddr} ",
+        "format-disconnected": "NET: Disconnected ",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}"
+    },
+    
+    "pulseaudio": {
+        "format": "VOL: {volume}% {icon}",
+        "format-bluetooth": "BT: {volume}% {icon}",
+        "format-muted": "MUTE ",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    
+    "bluetooth": {
+        "format": "BT: {status}",
+        "format-connected": "BT: {device_alias}",
+        "format-connected-battery": "BT: {device_alias} {device_battery_percentage}%",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "on-click": "blueman-manager"
+    },
+    
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    }
+}
