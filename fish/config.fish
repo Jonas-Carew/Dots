@@ -74,6 +74,20 @@ end
 set -gx EDITOR "kak"
 set -gx VISUAL "kak"
 
+# fish brightness
+
+function bright
+	brightnessctl set 80%
+end
+
+function dim
+	brightnessctl set 40%
+end
+
+function dark
+	brightnessctl set 5%
+end
+
 # vi bindings
 
 fish_vi_key_bindings
