@@ -143,8 +143,8 @@ do
 	riverctl map $mode Super minus spawn "fish -c 'dark'"
 
 	# screenshot
-	riverctl map $mode Super+Shift S spawn "grim -g `slurp`"
-	riverctl map $mode Super+Shift+Control S spawn "grim -g `slurp` - | wl-copy"
+	#riverctl map $mode Super+Shift S spawn "grim -g `slurp`"
+	#riverctl map $mode Super+Shift+Control S spawn "grim -g `slurp` - | wl-copy"
 
 done
 
