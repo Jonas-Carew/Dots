@@ -57,7 +57,7 @@ end
 # pdf
 
 function pdf
-	bash -c "okular $argv[1]"
+	bash -c "okular $argv[1] &"
 end
 
 # Inits
