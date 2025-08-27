@@ -54,6 +54,12 @@ function gp
     git push
 end
 
+# pdf
+
+function pdf
+	bash -c "okular $argv[1]"
+end
+
 # Inits
 
 zoxide init fish | source
