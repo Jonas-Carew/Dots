@@ -78,8 +78,9 @@ tabline.setup({
     },
     tab_inactive = { 'index', { 'process', padding = { left = 0, right = 1 } } },
     tabline_x = { ' ' },
-    tabline_y = { 'battery' },
-    tabline_z = { 'datetime' },
+    tabline_y = { 'cpu' },
+    tabline_z = { 'battery' },
+    --tabline_z = { ' ' },
   },
   extensions = {},
 })
