@@ -115,3 +115,9 @@ function fish_mode_prompt
     end
     set_color normal
 end
+
+# lt spice
+function spice
+	wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe
+end
+
