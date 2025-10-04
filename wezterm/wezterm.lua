@@ -90,7 +90,7 @@ tabline.apply_to_config(config)
 -- config.window_decorations = "TITLE | RESIZE"
 config.window_decorations = "NONE"
 
-config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 60000 }
+config.leader = { key = ' ', mods = 'CTRL', timeout_milliseconds = 60000 }
 config.keys = {
 	{
 		mods = 'LEADER',
