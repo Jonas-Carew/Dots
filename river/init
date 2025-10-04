@@ -183,3 +183,5 @@ swww img ~/Desktop/Desktop/Backgrounds/background_omon.jpg
 
 riverctl spawn swayidle
 
+riverctl spawn nm-applet
+
