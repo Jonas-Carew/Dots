@@ -151,12 +151,15 @@ do
 done
 
 # Set background and border color
-riverctl background-color 0x002b36
-riverctl border-color-focused 0x93a1a1
-riverctl border-color-unfocused 0x586e75
+riverctl rule-add ssd
+riverctl background-color 0x526a70
+riverctl border-color-focused 0x4debc6
+riverctl border-color-unfocused 0x607872
 
 # Set keyboard repeat rate
 riverctl set-repeat 50 300
+
+#riverctl rule-add csd
 
 # Make all views with an app-id that starts with "float" and title "foo" start floating.
 # riverctl rule-add -app-id 'float*' -title 'foo' float
@@ -169,8 +172,6 @@ riverctl set-repeat 50 300
 #DEFAULT:
 riverctl default-layout rivertile
 rivertile -view-padding 6 -outer-padding 6 &
-
-riverctl rule-add csd
 
 riverctl input pointer-1267-12448-ELAN072B:00_04F3:30A0_Touchpad natural-scroll enabled
 riverctl input pointer-1267-12448-ELAN072B:00_04F3:30A0_Touchpad tap enabled

@@ -11,21 +11,21 @@ function bls
 	bash -c 'ls'
 end
 
-function ls
+function ks
     eza --icons
 end
 
-function la
+function ka
     eza -a --icons
 end
 
-function lz
+function kz
     eza -a -l -h --git --git-repos --no-user --total-size --icons
 end
 
 function cl
     c
-    ls
+    ks
 end
 
 function condir
@@ -40,7 +40,7 @@ function desk
     c
     z ~/Desktop/Desktop
     fetch
-	ls
+	ks
 end
 
 # Git
