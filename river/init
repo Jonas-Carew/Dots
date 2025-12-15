@@ -144,9 +144,8 @@ do
 	riverctl map $mode Super equal spawn "fish -c 'dim'"
 	riverctl map $mode Super minus spawn "fish -c 'dark'"
 
-	# screenshot
-	#riverctl map $mode Super+Shift S spawn "grim -g `slurp`"
-	#riverctl map $mode Super+Shift+Control S spawn "grim -g `slurp` - | wl-copy"
+	# waybar
+	riverctl map $mode Super r spawn "fish -c 'killall waybar && riverctl spawn waybar'"
 
 done
 
@@ -187,4 +186,6 @@ swww img ~/Desktop/Desktop/Backgrounds/background_omon.jpg
 riverctl spawn swayidle
 
 riverctl spawn nm-applet
+
+
 
