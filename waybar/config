@@ -21,6 +21,7 @@
         "format": "{:%I:%M %p %m/%d/%Y}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
 		"timezone": "America/Los_Angeles",
+		//"timezone": "America/Chicago",
     },
     
     "cpu": {
