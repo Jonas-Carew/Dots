@@ -27,11 +27,17 @@ v.pack.add({
 })
 
 v.lsp.enable({
-	"clangd",	-- C
-	"lua_ls",	-- Lua
-	"pylsp",	-- Python
-	"tinymist",	-- Typst
-	"zls",		-- Zig
+	"clangd", -- C
+	"lua_ls", -- Lua
+	"pylsp", -- Python
+	"qmlls", -- qml
+	"tinymist", -- Typst
+	"zls",   -- Zig
+})
+
+v.lsp.config("qmlls", {
+	cmd = { "qmlls6" },
+	filetypes = { "qml" },
 })
 
 -- Options!
@@ -90,7 +96,6 @@ keymap("v", ">", ">gv")
 keymap("i", "<C-l>", "<ESC>O")
 
 -- Space + h opens lsp help
---keymap("n", "<leader>h", ":lua vim.diagnostic.open_float()<cr>")
 keymap("n", "<leader>lf", v.lsp.buf.format)
 
 -- Special function to replace all double spaces with tabs
