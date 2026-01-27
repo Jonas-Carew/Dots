@@ -121,3 +121,6 @@ function spice
 	wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe
 end
 
+# gtk warning
+set -x NO_AT_BRIDGE 1
+
