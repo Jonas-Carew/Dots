@@ -1,5 +1,4 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR __fish_initialized:4300
-SETUVAR fish_key_bindings:fish_default_key_bindings
 SETUVAR fish_user_paths:/opt/xpack\x2dopenocd\x2d0\x2e12\x2e0\x2d7/bin\x1e/opt/arm\x2dgnu\x2dtoolchain\x2d15\x2e2\x2erel1\x2dx86_64\x2darm\x2dnone\x2deabi/bin\x1e/home/jonasc/\x2elocal/share/bob/nightly/bin
