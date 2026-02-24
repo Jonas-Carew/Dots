@@ -60,6 +60,11 @@ function pdf
 	bash -c "okular $argv[1] &"
 end
 
+# take video
+function video
+	wf-recorder -a
+end
+
 # Inits
 
 zoxide init fish | source
