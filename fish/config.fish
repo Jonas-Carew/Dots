@@ -129,3 +129,6 @@ end
 # gtk warning
 set -x NO_AT_BRIDGE 1
 
+# time
+set TZ "America/Los_Angeles"
+
