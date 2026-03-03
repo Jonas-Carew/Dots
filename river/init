@@ -13,7 +13,8 @@
 # Super+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
 riverctl map normal Super+Shift Return spawn wezterm
 
-riverctl map normal Super Return spawn "tofi-run | xargs riverctl spawn"
+#riverctl map normal Super Return spawn "tofi-run | xargs riverctl spawn"
+riverctl map normal Super Return spawn "walker | xargs riverctl spawn"
 
 riverctl map normal Super P spawn "~/Dots/screenshot.sh region"
 
@@ -187,5 +188,5 @@ riverctl spawn swayidle
 
 riverctl spawn nm-applet
 
-
+riverctl spawn elephant
 
