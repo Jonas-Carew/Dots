@@ -130,5 +130,5 @@ end
 set -x NO_AT_BRIDGE 1
 
 # time
-set TZ "America/Los_Angeles"
+set -gx TZ "America/Los_Angeles"
 
