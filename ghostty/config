@@ -1,0 +1,47 @@
+
+keybind = clear
+
+command = "fish"
+
+keybind = ctrl+space>c=new_tab
+keybind = ctrl+shift+w=close_tab:this
+keybind = ctrl+tab=next_tab
+keybind = ctrl+shift+tab=previous_tab
+
+keybind = ctrl+space>shift+backslash=new_split:right
+keybind = ctrl+space>minus=new_split:down
+
+# default cell size is 10 x 22
+# shift 5 cells at a time
+keybind = ctrl+shift+h=resize_split:left,50
+keybind = ctrl+shift+j=resize_split:down,110
+keybind = ctrl+shift+k=resize_split:up,110
+keybind = ctrl+shift+l=resize_split:right,50
+
+keybind = ctrl+alt+h=goto_split:left
+keybind = ctrl+alt+j=goto_split:down
+keybind = ctrl+alt+k=goto_split:up
+keybind = ctrl+alt+l=goto_split:right
+
+keybind = ctrl+space>m=toggle_split_zoom
+
+window-decoration = none
+
+font-family = FiraCode Nerd Font Reg
+
+#theme = Spacegray Bright
+#theme = Warm Neon
+theme = Sonokai
+#theme = Liquid Carbon
+#theme = Highway
+#theme = Doom Peacock
+
+
+
+keybind = global:ctrl+g=toggle_quick_terminal
+quick-terminal-position = bottom
+# autohide breaks manually hiding
+#quick-terminal-autohide
+
+
+
