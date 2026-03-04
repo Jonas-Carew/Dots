@@ -3,8 +3,11 @@ keybind = clear
 
 command = "fish"
 
+keybind = ctrl+shift+,=reload_config
+
 keybind = ctrl+space>c=new_tab
 keybind = ctrl+shift+w=close_tab:this
+
 keybind = ctrl+tab=next_tab
 keybind = ctrl+shift+tab=previous_tab
 
