@@ -1,7 +1,7 @@
 
 keybind = clear
 
-command = "fish"
+command = "fish -c tmux"
 
 keybind = ctrl+shift+,=reload_config
 
