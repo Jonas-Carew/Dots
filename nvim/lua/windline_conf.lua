@@ -12,6 +12,7 @@ local vi_mode = {
 	["REPLACE"] = { " REPLACE ", { "black2", "orange3" } },
 	["VISUAL"] =  { " VISUAL  ", { "black2", "red3" } },
 	["V-LINE"] =  { " V-LINE  ", { "black2", "purple3" } },
+	["V-BLOCK"] = { " V-BLOCK ", { "black2", "teal3" } },
 	["COMMAND"] = { " COMMAND ", { "black2", "green3" } },
 }
 
@@ -102,9 +103,9 @@ basic.percent = {
     name = "percent",
     text = function()
         return {
-			{ ' ', { "purple3", "black2" } },
-			{ base.line_col_lua, { "black2", "purple3" } },
-			{ base.progress_lua, { "black2", "purple3" } },
+			{ ' ', { "black3", "black2" } },
+			{ base.line_col_lua, { "yellow2", "black3" } },
+			{ base.progress_lua, { "yellow2", "black3" } },
 			{ "  " },
 		}
     end
@@ -166,6 +167,10 @@ wl.setup({
 		colors.green1 = "#275716"
 		colors.green2 = "#3AAB11"
 		colors.green3 = "#78C25C"
+
+		colors.teal1 = "#089B68"
+		colors.teal2 = "#0AC785"
+		colors.teal3 = "#45F5B6"
 
 		colors.blue1 = "#2D4495"
 		colors.blue2 = "#3664E3"
