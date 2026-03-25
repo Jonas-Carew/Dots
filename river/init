@@ -182,8 +182,8 @@ riverctl map-switch normal lid close spawn "swaylock"
 # APPS TO RUN ON STARTUP
 riverctl spawn waybar
 
-riverctl spawn swww-daemon
-swww img ~/Desktop/Desktop/Backgrounds/background_omon.jpg
+riverctl spawn awww-daemon
+awww img ~/Desktop/Desktop/Backgrounds/background_omon.jpg
 
 riverctl spawn swayidle
 
