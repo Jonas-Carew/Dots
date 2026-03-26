@@ -95,8 +95,13 @@ keymap("v", ">", ">gv")
 -- Ctrl + L in insert opens up brackets
 keymap("i", "<C-l>", "<ESC>O")
 
--- Space + h opens lsp help
-keymap("n", "<leader>lf", v.lsp.buf.format)
+-- LSP commands all start with Space + l
+-- R for Refactor
+keymap("n", "<leader>lr", v.lsp.buf.rename)
+-- F for reFerences
+keymap("n", "<leader>lf", v.lsp.buf.rename)
+-- H for hover
+keymap("n", "<leader>lh", v.lsp.buf.hover)
 
 -- Special function to replace all double spaces with tabs
 v.cmd("command Tab2 %s/  /\t/g")
