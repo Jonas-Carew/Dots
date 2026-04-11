@@ -41,7 +41,7 @@ v.lsp.config("qmlls", {
 })
 
 -- set pretext files to highlight as html
-vim.filetype.add({
+v.filetype.add({
 	extension = {
 		ptx = 'html',
 	},
