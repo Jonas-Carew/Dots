@@ -1,6 +1,6 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: FiracodeNerdFont, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
 }
 
@@ -35,7 +35,7 @@ window#waybar.chromium {
 }
 
 #tags button.focused{
-	background-color: #48b57c;
+	background-color: #ff6314;
 	color: #353535;
 }
 
