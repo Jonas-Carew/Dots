@@ -20,6 +20,7 @@ set-option global scrolloff 2,2
 
 # insert maps
 map global insert <a-:> <esc> -docstring "Escape to normal mode"
+map global insert <a-m> "<lt>m<gt><lt>/m<gt><left><left><left><left>"
 # user maps
 map global user <l> ":lsp-hover<ret>" -docstring "LSP Hover"
 map global user <r> ":lsp-highlight-references<ret>" -docstring "LSP Highlight Refs"
