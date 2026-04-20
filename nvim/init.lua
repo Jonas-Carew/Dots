@@ -24,6 +24,8 @@ v.pack.add({
 	{ src = "https://github.com/nvim-neo-tree/neo-tree.nvim" },
 	-- Telescope
 	{ src = "https://github.com/nvim-telescope/telescope.nvim" },
+	-- Python linter
+	{ src = "https://github.com/tell-k/vim-autopep8" },
 })
 
 v.lsp.enable({
@@ -39,6 +41,8 @@ v.lsp.config("qmlls", {
 	cmd = { "qmlls6" },
 	filetypes = { "qml" },
 })
+
+
 
 -- set pretext files to highlight as html
 v.filetype.add({
@@ -106,9 +110,11 @@ keymap("i", "<C-l>", "<ESC>O")
 -- R for Refactor
 keymap("n", "<leader>lr", v.lsp.buf.rename)
 -- F for reFerences
-keymap("n", "<leader>lf", v.lsp.buf.rename)
+keymap("n", "<leader>lf", v.lsp.buf.references)
 -- H for hover
 keymap("n", "<leader>lh", v.lsp.buf.hover)
+-- Diagnostics
+keymap("n", "<leader>ld", v.diagnostic.open_float)
 
 keymap("i", "<A-m>", "<lt>m><lt>/m><Left><Left><Left><Left>")
 

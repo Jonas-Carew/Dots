@@ -4,6 +4,10 @@
       "rev": "334d918d5241262816624e8c80410574ccdb25dc",
       "src": "https://github.com/Mofiqul/adwaita.nvim"
     },
+    "ale": {
+      "rev": "c59c0d1a573a7b2fe491f78af4f2033bde454753",
+      "src": "https://github.com/dense-analysis/ale"
+    },
     "gitsigns.nvim": {
       "rev": "5813e4878748805f1518cee7abb50fd7205a3a48",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
@@ -35,6 +39,10 @@
     "typst-preview.nvim": {
       "rev": "291972a39db85c5d2e76249748aba4206dfd3bc2",
       "src": "https://github.com/chomosuke/typst-preview.nvim"
+    },
+    "vim-autopep8": {
+      "rev": "4191261db378fcad4213fc59a7f3be0c2735d543",
+      "src": "https://github.com/tell-k/vim-autopep8"
     },
     "windline.nvim": {
       "rev": "2e83922bf289ffd30fbd7f7028fdb4711592dd92",
