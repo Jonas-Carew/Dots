@@ -8,24 +8,24 @@ function c
 end
 
 function bls
-	bash -c 'ls'
+	bash -c 'ls' $argv
 end
 
 function ks
-    eza --icons
+    eza --icons $argv
 end
 
 function ka
-    eza -a --icons
+    eza -a --icons $argv
 end
 
 function kz
-    eza -a -l -h --git --git-repos --no-user --total-size --icons
+    eza -a -l -h --git --git-repos --no-user --total-size --icons $argv
 end
 
 function cl
     c
-    ks
+    ks $argv
 end
 
 function condir
@@ -102,6 +102,12 @@ end
 function lock
 	dark
 	swaylock
+end
+
+# scripts
+
+function battery
+	~/Dots/scripts/battery.sh
 end
 
 # vi bindings
