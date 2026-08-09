@@ -107,7 +107,7 @@ end
 # scripts
 
 function battery
-	~/Dots/scripts/battery.sh
+    ~/Dots/scripts/battery.sh
 end
 
 # vi bindings
