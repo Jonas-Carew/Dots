@@ -1,0 +1,57 @@
+
+# Not working?
+live: true
+
+default_profile: main
+
+profiles:
+  main:
+    shell: /bedrock/cross/bin/fish
+    arguments: [ "-C", "desk" ]
+    initial_working_directory: "/home/jonasc/Desktop/Desktop/"
+    show_title_bar: false
+    size_indicator_on_resize: false
+    momentum_scrolling: false
+    mouse:
+      hide_while_typing: true
+    font:
+      size: 10
+      regular:
+        family: "FiracodeNerdFont"
+    screen_transition: classic
+    background:
+      opacity: 0.9
+    status_line:
+        display: none
+
+color_schemes:
+    default:
+        default:
+            background: "#23272e"
+            foreground: "#abb2bf"
+        cursor:
+            default: "#528bff"
+            text: "#616e5d"
+        selection:
+            background: "#434956"
+            foreground: "#abb2bf"
+        normal:
+            black: "#3f4451"
+            red: "#e05561"
+            green: "#8cc265"
+            yellow: "#d18f52"
+            blue: "#4aa5f0"
+            magenta: "#c162de"
+            cyan: "#42b3c2"
+            white: "#d7dae0"
+        bright:
+            black: "#4f5666"
+            red: "#ff616e"
+            green: "#a5e075"
+            yellow: "#f0a45d"
+            blue: "#4dc4ff"
+            magenta: "#de73ff"
+            cyan: "#4cd1e0"
+            white: "#e6e6e6"
+
+input_mapping:
