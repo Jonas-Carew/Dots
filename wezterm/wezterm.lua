@@ -4,6 +4,8 @@ local config = wezterm.config_builder()
 
 local act = wezterm.action
 
+config.enable_wayland = true
+
 config.color_scheme = 'Breeze (Gogh)'
 -- config.color_scheme = 'Chalk'
 -- config.color_scheme = 'DimmedMonokai'
