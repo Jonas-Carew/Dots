@@ -17,7 +17,7 @@ riverctl map normal Super Return spawn "tofi-run | xargs fish -c"
 #riverctl map normal Super Return spawn "walker | xargs riverctl spawn"
 #riverctl spawn elephant
 
-riverctl map normal Super P spawn "~/Dots/screenshot.sh region"
+riverctl map normal Super P spawn "~/Dots/scripts/screenshot.sh region"
 
 # Super+Q to close the focused view
 riverctl map normal Super Q close
@@ -140,8 +140,7 @@ do
     # Control screen backlight brightness with brightnessctl (https://github.com/Hummer12007/brightnessctl)
     riverctl map $mode None XF86MonBrightnessUp   spawn 'brightnessctl set +5%'
     riverctl map $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%-'
-
-	# birghtness
+# birghtness
 	riverctl map $mode Super+Shift equal spawn "fish -c 'bright'"
 	riverctl map $mode Super equal spawn "fish -c 'dim'"
 	riverctl map $mode Super minus spawn "fish -c 'dark'"
