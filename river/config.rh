@@ -1,0 +1,40 @@
+
+# Channel config
+# Manges input configurations
+
+input {
+    profiles {
+        keyboard {
+            keyboard {
+                layout us
+                # variant
+                # options
+                # layout
+                # rules
+                repeat {
+                    rate 60
+                    delay 250
+                }
+            }
+        }
+
+        touchpad {
+            pointer {
+                scroll_factor 1.0
+            }
+
+            libinput {
+                natural_scroll true
+                scroll_method two_finger
+                tap_to_click true
+                click_method clickfinger
+                disable_while_typing true
+            }
+        }
+    }
+
+    rules [
+        type, keyboard, keyboard
+        name, * Touchpad, touchpad
+    ]
+}
