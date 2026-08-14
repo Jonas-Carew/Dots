@@ -8,7 +8,7 @@ function c
 end
 
 function bls
-	bash -c 'ls' $argv
+	bash -c 'ls $argv'
 end
 
 function ks
@@ -134,7 +134,4 @@ end
 
 # gtk warning
 set -x NO_AT_BRIDGE 1
-
-# time
-set -gx TZ "America/Los_Angeles"
 
