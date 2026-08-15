@@ -28,7 +28,8 @@ color_schemes:
             background: "#23272e"
             foreground: "#abb2bf"
         cursor:
-            default: "#4cd1e0"
+            #default: "#4cd1e0"
+            default: "#f8dcc0"
             text: "#616e5d"
         selection:
             background: "#434956"
