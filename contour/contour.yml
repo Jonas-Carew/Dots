@@ -4,7 +4,7 @@ default_profile: main
 profiles:
     main:
         shell: /bedrock/cross/bin/fish
-        arguments: [ "-c", "tmux" ]
+        arguments: [ "-c", "tmux -f ~/Dots/tmux/.tmux.conf" ]
         initial_working_directory: "/home/jonasc/Desktop/Desktop/"
         show_title_bar: false
         size_indicator_on_resize: false
