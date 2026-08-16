@@ -110,6 +110,10 @@ function battery
     ~/Dots/scripts/battery.sh
 end
 
+function rebar
+    ~/Dots/scripts/rebar.sh
+end
+
 # vi bindings
 
 fish_vi_key_bindings
