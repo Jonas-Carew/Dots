@@ -9,6 +9,17 @@ argenctl binding set normal Super+Shift Return exec "contour"
 # Spawn Apps
 argenctl binding set normal Super Return sh "tofi-run | xargs fish -c"
 
+# Output focus and send
+argenctl binding set normal Super Period output focus next
+argenctl binding set normal Super Comma output focus prev
+argenctl binding set normal Super+Shift Period window send next
+argenctl binding set normal Super+Shift Comma window send prev
+
+# === LAYOUT / WINDOW ===
+
+argenctl layout set inner-padding 3
+argenctl layout set outer-padding 5
+
 # Window focus and swap
 argenctl binding set normal Super J window focus prev
 argenctl binding set normal Super K window focus next
@@ -20,50 +31,48 @@ argenctl binding set normal Super Space window float
 
 argenctl binding set normal Super Q window close
 
-# Output focus and send
-argenctl binding set normal Super Period output focus next
-argenctl binding set normal Super Comma output focus prev
-argenctl binding set normal Super+Shift Period window send next
-argenctl binding set normal Super+Shift Comma window send prev
-
 # Layout
 argenctl binding set normal Super H layout set primary-ratio -0.05
 argenctl binding set normal Super L layout set primary-ratio +0.05
-argenctl binding set normal Super+Control K layout set secondary-ratio -0.05
-argenctl binding set normal Super+Control J layout set secondary-ratio +0.05
+argenctl binding set normal Super+Shift H layout set secondary-ratio -0.05
+argenctl binding set normal Super+Shift L layout set secondary-ratio +0.05
 
 # Pointer
 argenctl pointer-binding set normal Super BTN_LEFT move-window
 argenctl pointer-binding set normal Super BTN_RIGHT resize-window
-# I dont have middle button, possibly add different binding?
-# argenctl pointer-binding set normal Super BTN_MIDDLE scroll
+argenctl pointer-binding set normal Super+Shift BTN_LEFT scroll
 
-# Context
-argenctl binding set normal Super+Shift+Control Q context close
+# Assign currently focused window to be toggled with Super I
+argenctl binding set normal Super+Shift I sh '
+    id=$(argenctl window list --json | jq -r ".[] | select(.focused) | .id")
+    argenctl binding set normal Super I window toggle "$id"
+'
+
+# === Contexts ===
+
+# Simple binds
+argenctl binding set normal Super+Shift Q context close
 argenctl binding set normal Super Tab context switch --last
 
 # Switch contexts interactively
 argenctl binding set normal Super Slash sh 'argenctl context switch "$(argenctl context list | fuzzel -d --only-match)"'
 
 # Create new context interactively
-argenctl binding set normal Super+Shift Slash sh '
+argenctl binding set normal Super+Control Slash sh '
     prompt="$(fuzzel -d --prompt-only "new > ")"
     argenctl context new "$prompt"
 '
 
 # Rename current context interactively
-argenctl binding set normal Super+Control Slash sh '
+argenctl binding set normal Super+Control Comma sh '
     prompt="$(fuzzel -d --prompt-only "rename > ")"
     argenctl context rename "$prompt"
 '
 
-# Assign currently focused window to be toggled with Super U
-argenctl binding set normal Super+Shift U sh '
-    id=$(argenctl window list --json | jq -r ".[] | select(.focused) | .id")
-    argenctl binding set normal Super U window toggle "$id"
-'
+# === Adopting and Detaching ===
 
 argenctl binding set normal Super D window detach
+
 # Attach window interactively
 argenctl binding set normal Super+Shift D sh '
     id=$(argenctl window list | fuzzel -d --with-nth 2 --accept-nth 1 --only-match)
@@ -78,8 +87,6 @@ argenctl binding set normal Super+Control D sh '
 '
 
 # Layouts
-# argenctl binding set normal Super Minus layout switch prev
-# argenctl binding set normal Super Equal layout switch next
 argenctl binding set normal Super 1 layout switch stacktile
 argenctl binding set normal Super 2 layout switch monocle
 argenctl binding set normal Super 3 layout switch columns
@@ -122,4 +129,8 @@ awww img ~/Desktop/Desktop/Backgrounds/background_omon.jpg
 # Waybar (change for zelbar?)
 argenctl sh "fish -c rebar"
 argenctl binding set normal Super r sh "fish -c rebar"
+
+# Idle
+argenctl exec swayidle
+argenctl exec nm-applet
 
