@@ -99,11 +99,6 @@ function dark
 	brightnessctl set 5%
 end
 
-function lock
-	dark
-	swaylock
-end
-
 # scripts
 
 function battery
@@ -112,6 +107,10 @@ end
 
 function rebar
     ~/Dots/scripts/rebar.sh
+end
+
+function lock
+	~/Dots/scripts/lock.sh
 end
 
 # vi bindings
