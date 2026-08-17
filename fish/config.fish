@@ -113,10 +113,6 @@ function lock
 	~/Dots/scripts/lock.sh
 end
 
-function repath
-	~/Dots/scripts/repath.sh
-end
-
 # vi bindings
 
 fish_vi_key_bindings
