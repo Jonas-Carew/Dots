@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Exit
+# Exiting
 argenctl binding set normal Super+Shift+Control E exit
 
 # Terminal
@@ -122,6 +122,12 @@ argenctl binding set passthrough Super Grave mode enter normal
 
 # Window rules
 argenctl rule add no-tearing
+
+# === SCRIPT BINDS ===
+
+argenctl binding set normal Super P sh "~/Dots/scripts/screenshot.sh region"
+
+argenctl binding set normal Super Escape sh "~/Dots/scripts/lock.sh"
 
 # === STARTUP ===
 
