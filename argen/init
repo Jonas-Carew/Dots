@@ -17,8 +17,14 @@ argenctl binding set normal Super+Shift Comma window send prev
 
 # === LAYOUT / WINDOW ===
 
-argenctl layout set inner-padding 3
-argenctl layout set outer-padding 5
+argenctl config set default-layout stacktile
+argenctl config set stacktile inner-padding 3
+argenctl config set stacktile outer-padding 5
+argenctl config set monocle outer-padding 5
+argenctl config set columns inner-padding 3
+argenctl config set columns outer-padding 5
+argenctl config set scrolling inner-padding 3
+argenctl config set scrolling outer-padding 5
 
 # Window focus and swap
 argenctl binding set normal Super J window focus prev
@@ -98,10 +104,12 @@ argenctl binding set normal Super 2 layout switch monocle
 argenctl binding set normal Super 3 layout switch columns
 argenctl binding set normal Super 4 layout switch scrolling
 
+# ALL MODE BINDINGS
+
 # Audio and brightness controls
-VOL_DEC='wpctl set-volume @DEFAULT_SINK@ 5%-'
-VOL_INC='wpctl set-mute @DEFAULT_SINK@ 0 && wpctl set-volume @DEFAULT_SINK@ --limit 1.5 5%+'
-VOL_TOGGLE='wpctl set-mute @DEFAULT_SINK@ toggle'
+VOL_DEC='pamixer -d 5'
+VOL_INC='pamixer -i 5'
+VOL_TOGGLE='pamixer --toggle-mute'
 for mode in normal locked; do
     argenctl binding set $mode None XF86AudioLowerVolume sh "$VOL_DEC"
     argenctl binding set $mode None XF86AudioRaiseVolume sh "$VOL_INC"
@@ -143,8 +151,8 @@ argenctl sh "fish -c rebar"
 argenctl binding set normal Super r sh "fish -c rebar"
 
 # Idle
-argenctl exec "swayidle before-sleep 'true'"
+argenctl sh "swayidle before-sleep 'true'"
 
 # Network
-argenctl exec nm-applet
+argenctl sh nm-applet
 
