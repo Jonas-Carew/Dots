@@ -113,6 +113,10 @@ function lock
 	~/Dots/scripts/lock.sh
 end
 
+function repath
+	~/Dots/scripts/repath.sh
+end
+
 # vi bindings
 
 fish_vi_key_bindings
@@ -137,4 +141,7 @@ end
 
 # gtk warning
 set -x NO_AT_BRIDGE 1
+
+# no welcome message
+set -U fish_greeting ""
 
