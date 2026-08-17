@@ -7,6 +7,7 @@
 # Locking
 
 fish -c dark
+nmcli radio wifi off
 #loginctl suspend
 swaylock
 
