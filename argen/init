@@ -51,7 +51,7 @@ argenctl binding set normal Super+Shift I sh '
 # === Contexts ===
 
 # Simple binds
-argenctl binding set normal Super+Shift Q context close
+argenctl binding set normal Super+Control Q context close
 argenctl binding set normal Super Tab context switch --last
 
 # Switch contexts interactively
@@ -74,13 +74,19 @@ argenctl binding set normal Super+Control Comma sh '
 argenctl binding set normal Super D window detach
 
 # Attach window interactively
-argenctl binding set normal Super+Shift D sh '
-    id=$(argenctl window list | fuzzel -d --with-nth 2 --accept-nth 1 --only-match)
-    argenctl window attach "$id"
-'
+argenctl binding set normal Super+Control D sh "
+    id=\$(argenctl window list --json | jq -r '.[] | @json \"\\(.id)\\t\\(.title)\"' | fuzzel -w 60 -d --with-nth 2 --accept-nth 1 --only-match | tr -d '\"')
+    argenctl window attach \$id
+"
+
+# Attach orphans interactively
+argenctl binding set normal Super+Shift D sh "
+    id=\$(argenctl window list --json | jq -r '.[] | select(.contexts | length == 0) | @json \"\\(.id)\\t\\(.title)\"' | fuzzel -w 60 -d --with-nth 2 --accept-nth 1 --only-match | tr -d '\"')
+    argenctl window attach \$id
+"
 
 # Adopt all orphans
-argenctl binding set normal Super+Control D sh '
+argenctl binding set normal Super+Shift+Control D sh '
     argenctl window list --json | jq -r ".[] | select(.contexts | length == 0) | .id" | while read -r id; do
         argenctl window attach "$id"
     done
@@ -131,6 +137,8 @@ argenctl sh "fish -c rebar"
 argenctl binding set normal Super r sh "fish -c rebar"
 
 # Idle
-argenctl exec swayidle
+argenctl exec "swayidle before-sleep 'true'"
+
+# Network
 argenctl exec nm-applet
 
