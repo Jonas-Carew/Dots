@@ -113,6 +113,10 @@ function lock
 	~/Dots/scripts/lock.sh
 end
 
+function repath
+    cd "/home$(pwd | string split 'home' | string match 'jonasc' -e)"
+end
+
 # vi bindings
 
 fish_vi_key_bindings
