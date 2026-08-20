@@ -7,7 +7,7 @@ argenctl binding set normal Super+Shift+Control E exit
 argenctl binding set normal Super+Shift Return exec "contour"
 
 # Spawn Apps
-argenctl binding set normal Super Return sh "tofi-run | xargs fish -c"
+argenctl binding set normal Super Return sh "tofi-run --font='FiracodeNerdFont' --font-size=11 --prompt-text='' --background-color=#1E1E2E --padding-top=10 | xargs fish -c"
 
 # Output focus and send
 argenctl binding set normal Super Period output focus next

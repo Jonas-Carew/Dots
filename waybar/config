@@ -4,9 +4,8 @@
     "height": 30,
     "spacing": 8,
     
-    "modules-left": ["river/tags"],
-    //"modules-center": ["river/window"],
-    "modules-right": ["backlight", "pulseaudio", "bluetooth", "cpu", "memory", "battery", "clock", "tray"],
+    "modules-left": ["tray", "bluetooth"],
+    "modules-right": ["backlight", "pulseaudio", "battery", "clock"],
     
     "river/tags": {
         "num-tags": 9,
@@ -51,9 +50,9 @@
     },
     
     "pulseaudio": {
-        "format": "VOL: {volume}% {icon}",
-        "format-bluetooth": "BT: {volume}% {icon}",
-        "format-muted": "MUTE ",
+        "format": "VOL: {volume}%",
+        "format-bluetooth": "BT: {volume}%",
+        "format-muted": "MUTE",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -67,10 +66,10 @@
     },
     
     "bluetooth": {
-        "format": "BT: {status}",
-        "format-connected": "BT: {device_alias}",
-        "format-connected-battery": "BT: {device_alias} {device_battery_percentage}%",
-        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "format": " BT: {status}",
+        "format-connected": " BT: {device_alias}",
+        "format-connected-battery": " BT: {device_alias} {device_battery_percentage}%",
+        "tooltip-format": " {controller_alias}\t{controller_address}\n\n{num_connections} connected",
         "on-click": "blueman-manager"
     },
     
