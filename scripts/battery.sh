@@ -1,7 +1,6 @@
 #!/bin/sh
 
 BAT_PATH=`upower -e | grep 'battery'`
-INFO=`upower -i ${BAT_PATH}`
 
 CHARGE=`upower -i ${BAT_PATH} | grep 'percentage:' | tr -s ' ' | cut -d' ' -f3`
 TIME=`upower -i ${BAT_PATH} | grep 'time to empty:' | tr -s ' ' | cut -d' ' -f5-6`
