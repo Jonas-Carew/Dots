@@ -43,6 +43,10 @@ function desk
 	ks
 end
 
+function rest
+    loginctl suspend
+end
+
 # Git
 
 function ga
@@ -70,7 +74,7 @@ end
 zoxide init fish | source
 starship init fish | source
 
-# OSU specifc functions
+# OSU specific functions
 
 function osu
     ssh carewj@flip1.engr.oregonstate.edu
