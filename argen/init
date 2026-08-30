@@ -17,6 +17,14 @@ argenctl binding set normal Super+Shift Comma window send prev
 
 # === LAYOUT / WINDOW ===
 
+argenctl layout set --name stacktile inner-padding 3
+argenctl layout set --name stacktile outer-padding 5
+argenctl layout set --name monocle outer-padding 5
+argenctl layout set --name columns inner-padding 3
+argenctl layout set --name columns outer-padding 5
+argenctl layout set --name scrolling inner-padding 3
+argenctl layout set --name scrolling outer-padding 5
+
 argenctl config set default-layout stacktile
 argenctl config set stacktile inner-padding 3
 argenctl config set stacktile outer-padding 5
