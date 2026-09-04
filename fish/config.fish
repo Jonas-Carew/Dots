@@ -43,10 +43,6 @@ function desk
 	ks
 end
 
-function rest
-    loginctl suspend
-end
-
 # Git
 
 function ga
@@ -115,6 +111,10 @@ end
 
 function lock
 	~/Dots/scripts/lock.sh
+end
+
+function rest
+    ~/Dots/scripts/rest.sh
 end
 
 function repath
