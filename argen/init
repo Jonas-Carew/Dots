@@ -3,6 +3,9 @@
 # Exiting
 argenctl binding set normal Super+Shift+Control E exit
 
+# Suspend
+argenctl binding set normal Super+Shift E sh "fish -c rest"
+
 # Terminal
 argenctl binding set normal Super+Shift Return exec "contour"
 
@@ -33,6 +36,8 @@ argenctl config set columns inner-padding 3
 argenctl config set columns outer-padding 5
 argenctl config set scrolling inner-padding 3
 argenctl config set scrolling outer-padding 5
+
+argenctl config set border-color-focused 0xE86A17
 
 # Window focus and swap
 argenctl binding set normal Super J window focus prev
