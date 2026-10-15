@@ -10,7 +10,8 @@ enable-auto-pairs
 harpoon-add-bindings
 
 add-highlighter global/ show-whitespaces -only-trailing -lf ' '
-add-highlighter global/ number-lines -hlcursor -relative
+#add-highlighter global/ number-lines -hlcursor -relative    # Relative numbers cause jitters
+add-highlighter global/ number-lines -hlcursor
 add-highlighter global/ show-matching
 add-highlighter global/ wrap -word -indent -marker '⏎'
 
